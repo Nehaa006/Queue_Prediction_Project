@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local data directories (prevents uploading large MOT17 images/text files)
+data/
+
+# Model checkpoints and weights files
+*.keras
+*.h5
+*.pkl
+
+# Paper outputs and figures (keep repository clean; generated dynamically by code)
+paper_outputs/
+
+# Virtual environments
+env/
+venv/
+ENV/
+
+# IDE / Editor folders
+.vscode/
+.idea/
+.DS_Store
