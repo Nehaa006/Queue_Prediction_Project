@@ -43,7 +43,7 @@ Ensure you have Python 3.10 or 3.11 installed. A GPU environment (CUDA supported
 ### 2. Environment Setup
 ```bash
 # Clone the project repository
-git clone https://github.com/your-username/queue-prediction-project.git
+git clone https://github.com/Nehaa006/queue-prediction-project.git
 cd queue-prediction-project
 
 # Create a virtual environment
