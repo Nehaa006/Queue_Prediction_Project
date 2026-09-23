@@ -34,15 +34,13 @@ The pipeline benchmarks six distinct statistical and deep learning architectures
 
 ---
 
-## ⚙️ Installation & Setup
-
 ### 1. Prerequisites
 Ensure you have Python 3.10 or 3.11 installed. A GPU environment (CUDA supported) is recommended for training.
 
 ### 2. Environment Setup
 ```bash
 # Clone the project repository
-git clone [https://github.com/your-username/queue-prediction-project.git](https://github.com/your-username/queue-prediction-project.git)
+git clone https://github.com/your-username/queue-prediction-project.git
 cd queue-prediction-project
 
 # Create a virtual environment
@@ -56,3 +54,43 @@ python -m venv env
 
 # Install dependencies
 pip install -r requirements.txt
+```
+
+## 📊 Dataset Setup (MOT17)
+This project utilizes the MOT17 (Multiple Object Tracking Benchmark) dataset.
+
+Download the MOT17 dataset from Kaggle or the MOT Challenge Official Site.
+
+Place and extract the dataset into the ./data/mot-17/ directory containing the train/ and test/ sequence directories.
+
+## 🏃 Execution & Output Generation
+To run the complete data extraction, feature engineering, model training, baseline evaluation, and visualization pipeline:
+
+Bash
+python main_pipeline.py
+Execution Steps & Automated Deliverables:
+Data Parsing: Parses gt.txt ground-truth tracking files from ./data/mot-17/train.
+
+Feature Extraction: Computes queue density, velocity vectors, entry/exit frame indices, and individual dwell times.
+
+Model Benchmarking: Trains 1D-TCN alongside baseline models (LSTM, CNN, CSRNet, Linear Regression, Naive) across sequence inputs.
+
+Figure & CSV Generation: Automatically saves all publication-grade outputs into the ./paper_outputs/ directory:
+
+dataset_description.csv: Summary dataset statistics.
+
+table3_prediction.csv: Complete model comparative metrics.
+
+fig1_wait_time_density.png: Probability density distribution of wait times.
+
+fig2_queue_size_distribution.png: Patient and crowd queue volume distribution.
+
+fig3_training_loss.png: Neural network convergence curves.
+
+fig4_detection_performance.png: Object detection metric breakdown.
+
+fig5_tracking_performance.png: Multi-object tracking evaluation metrics.
+
+fig6_prediction_comparison.png: Multi-model MAE and RMSE performance comparison chart.
+
+fig7_predicted_vs_actual.png: Scatter plot correlation of predicted vs actual wait times.
