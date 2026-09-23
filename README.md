@@ -18,6 +18,9 @@ This repository implements a **two-stage hybrid framework**:
 * **Inference Speed:** **2.1 ms (`0.0021s`)** per sequence using 1D-TCN, making it ideal for real-time edge deployment.
 
 ---
+### Architecture Diagram
+
+<img width="1024" height="713" alt="image" src="https://github.com/user-attachments/assets/77bab87e-a987-4843-98f2-ffbfb130fc28" />
 
 ## 🛠️ Models Evaluated
 
@@ -66,31 +69,34 @@ Place and extract the dataset into the ./data/mot-17/ directory containing the t
 ## 🏃 Execution & Output Generation
 To run the complete data extraction, feature engineering, model training, baseline evaluation, and visualization pipeline:
 
-Bash
+```bash
 python main_pipeline.py
+```
+
 Execution Steps & Automated Deliverables:
-Data Parsing: Parses gt.txt ground-truth tracking files from ./data/mot-17/train.
 
-Feature Extraction: Computes queue density, velocity vectors, entry/exit frame indices, and individual dwell times.
+* Data Parsing: Parses gt.txt ground-truth tracking files from ./data/mot-17/train.
 
-Model Benchmarking: Trains 1D-TCN alongside baseline models (LSTM, CNN, CSRNet, Linear Regression, Naive) across sequence inputs.
+* Feature Extraction: Computes queue density, velocity vectors, entry/exit frame indices, and individual dwell times.
 
-Figure & CSV Generation: Automatically saves all publication-grade outputs into the ./paper_outputs/ directory:
+* Model Benchmarking: Trains 1D-TCN alongside baseline models (LSTM, CNN, CSRNet, Linear Regression, Naive) across sequence inputs.
 
-dataset_description.csv: Summary dataset statistics.
+* Figure & CSV Generation: Automatically saves all publication-grade outputs into the ./paper_outputs/ directory:
 
-table3_prediction.csv: Complete model comparative metrics.
+* dataset_description.csv: Summary dataset statistics.
 
-fig1_wait_time_density.png: Probability density distribution of wait times.
+* table3_prediction.csv: Complete model comparative metrics.
 
-fig2_queue_size_distribution.png: Patient and crowd queue volume distribution.
+* fig1_wait_time_density.png: Probability density distribution of wait times.
 
-fig3_training_loss.png: Neural network convergence curves.
+* fig2_queue_size_distribution.png: Patient and crowd queue volume distribution.
 
-fig4_detection_performance.png: Object detection metric breakdown.
+* fig3_training_loss.png: Neural network convergence curves.
 
-fig5_tracking_performance.png: Multi-object tracking evaluation metrics.
+* fig4_detection_performance.png: Object detection metric breakdown.
 
-fig6_prediction_comparison.png: Multi-model MAE and RMSE performance comparison chart.
+* fig5_tracking_performance.png: Multi-object tracking evaluation metrics.
 
-fig7_predicted_vs_actual.png: Scatter plot correlation of predicted vs actual wait times.
+* fig6_prediction_comparison.png: Multi-model MAE and RMSE performance comparison chart.
+
+* fig7_predicted_vs_actual.png: Scatter plot correlation of predicted vs actual wait times.
